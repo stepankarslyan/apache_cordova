@@ -3,13 +3,14 @@
 	<head>
 		<title>Divice geolocation</title>
 		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<script type="text/javascript" charset="utf-8" src="camera.js"></script>
 		<script type="text/javascript" charset="utf-8">
-			document.addEventListener("deviceready", "onDeviceready", false);
+			document.addEventListener("deviceready", onDeviceready, false);
 			//evnt handler function
 			var onDeviceready = function() {
 				//onsuccess callback function that returns the position object
 				var onSuccess = function(position) {
-					window.confirm(
+					document.write(
 													'Latitude: '          + position.coords.latitude          + '\n' +
 													'Longitude: '         + position.coords.longitude         + '\n' +
 													'Altitude: '          + position.coords.altitude          + '\n' +
@@ -21,15 +22,16 @@
 					);
 				};
 				var onError = function(error) {
-					window.confirm(
+					document.write(
 						'code: '    + error.code    + '\n' +
 		        'message: ' + error.message + '\n'					
 					);
 				};
-				window.navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+				window.navigator.geolocation.getCurrentPosition(onSuccess, onError);
 			};
 		</script>
 	</head>
 	<body>
+	<image id="smallImage"/>
 	</body>
 </html>
