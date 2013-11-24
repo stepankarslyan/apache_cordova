@@ -6,7 +6,7 @@ var onDeviceReady = function() {
       
       var smallImage = document.getElementById('smallImage');
       smallImage.style.display = 'block';
-      smallImage.src = imageData;
+      smallImage.src = imageURI;
     };
     var capturePhoto = function() {
       navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
